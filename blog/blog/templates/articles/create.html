@@ -27,4 +27,11 @@
 
 {% block extra_js %}
     {{ form.media.js }}
+    <script>
+        $(function() {
+            $('#id_body').froalaEditor({
+                heightMin: 350,
+            })
+        });
+    </script>
 {% endblock %}
