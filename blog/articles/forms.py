@@ -4,14 +4,25 @@
 from django import forms
 
 from froala_editor.widgets import FroalaEditor
+from django_select2.forms import Select2MultipleWidget, Select2Widget
+from taggit.models import Tag, TaggedItem
 
-from .models import Post
+from .models import Post, Category
 
 
 class PostForm(forms.ModelForm):
     body = forms.CharField(widget=FroalaEditor)
+    category = forms.ModelChoiceField(
+        queryset=Category.objects.all(),
+        widget=Select2Widget
+    )
+
+    tags = forms.ModelMultipleChoiceField(
+        queryset=Tag.objects.all(),
+        widget=Select2MultipleWidget
+    )
 
     class Meta:
         model = Post
-        fields = ['title', 'slug', 'body', 'tags', 'status']
+        fields = ['title', 'slug', 'category', 'body', 'tags', 'status']
 

@@ -15,11 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('froala_editor/', include('froala_editor.urls')),
+    path('select2/', include('django_select2.urls')),
 
+    # Apps
     path('', include('articles.urls'), name='blog'),
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns
