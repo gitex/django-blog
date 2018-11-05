@@ -1,7 +1,11 @@
 {% extends "base.html" %}
-{% load blog_tags %}
+{% load static blog_tags %}
 
 {% block title %}Blog{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/libs/highlight/styles/github.css' %}">
+{% endblock %}
 
 {% block content %}
     {% for post in posts %}
@@ -34,4 +38,9 @@
     {% endfor %}
 
     {% include "parts/pagination.html" with page_obj=page_obj %}
+{% endblock %}
+
+{% block extra_js %}
+    <script type="text/javascript" src="{% static 'js/libs/highlight/highlight.pack.js' %}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 {% endblock %}
