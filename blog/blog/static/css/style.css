@@ -43,6 +43,20 @@ body {
   .article .body blockquote {
     color: gray; }
 
+.article .description {
+  background-color: #f7f7f7;
+  padding: 10px;
+  font-size: 11px;
+  color: gray; }
+  .article .description .tags {
+    margin-left: 20px; }
+    .article .description .tags .tag {
+      color: #707070 !important; }
+  .article .description i.far, .article .description i.fas {
+    margin-right: 7px;
+    font-size: 15px;
+    color: black; }
+
 .create-post .title {
   margin-top: 10px;
   background-color: white;
@@ -63,6 +77,9 @@ body {
 .tag-list a {
   color: #333 !important;
   text-decoration: none; }
+
+pre {
+  font-size: 12px !important; }
 
 tags {
   margin-bottom: 50px;

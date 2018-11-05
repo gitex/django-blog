@@ -26,8 +26,6 @@ urlpatterns = [
             path('update/', PostUpdateView.as_view(), name='post_update'),
             path('delete/', PostDeleteView.as_view(), name='post_delete'),
         ])),
-
-
     ])),
 
     path('tags/', include([

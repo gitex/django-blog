@@ -58,6 +58,28 @@ $gray-light: #ced4da;
 	        color: gray;
 	    }
 	}
+
+	.description {
+	    background-color: #f7f7f7;
+	    padding: 10px;
+
+	    font-size: 11px;
+        color: gray;
+
+        .tags {
+            margin-left: 20px;
+
+            .tag {
+                color: #707070 !important;
+            }
+        }
+
+	    i.far, i.fas {
+	        margin-right: 7px;
+	        font-size: 15px;
+	        color: black;
+	    }
+	}
 }
 
 .create-post {
@@ -88,4 +110,8 @@ $gray-light: #ced4da;
 		color: #333 !important;
 		text-decoration: none
 	}
+}
+
+pre {
+    font-size: 12px !important;
 }

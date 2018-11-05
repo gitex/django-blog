@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static  bootstrap4 %}
+{% load static bootstrap4 %}
 
 {% block title %}Создать пост{% endblock %}
 
@@ -8,6 +8,7 @@
 {% endblock %}
 
 {% block content %}
+
     <div class="create-post">
         <div class="title">
             <h2>Создать пост</h2>
@@ -27,30 +28,5 @@
 
 {% block extra_js %}
     {{ form.media.js }}
-    <script>
-        $(function() {
-            $.FroalaEditor.DefineIcon('code', {NAME: 'cog'});
-            $.FroalaEditor.RegisterCommand('code', {
-              title: 'Code',
-              type: 'dropdown',
-              focus: false,
-              undo: false,
-              refreshAfterCallback: true,
-              options: {
-                'python': 'Python',
-                'html': 'HTML',
-                'css': 'CSS',
-              },
-              callback: function (cmd, val) {
-                    this.html.insert('<pre><code class="' + val + '">' + this.html.getSelected () + '</code><pre>');
-              },
-            });
-
-            $('#id_body').froalaEditor({
-                heightMin: 350,
-
-                toolbarButtons: ['code']
-            })
-        });
-    </script>
+    <script type="text/javascript" src="{% static 'js/froala_settings.js' %}"></script>
 {% endblock %}

@@ -46,8 +46,6 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_select2',
 
-
-
     # Own apps
     'articles',
 
