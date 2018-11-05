@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Теги{% endblock %}
+
+{% block content %}
+    <div class="tag-list">
+        <h1 class="title text-center">Теги</h1>
+
+        <div class="tags">
+            {% for tag in tags %}
+                <a href="{% url 'blog:tag' tag=tag.slug %}">
+                    <span class="tag--inverse">{{ tag.name }} <span class="badge badge-secondary">{{ tag.count }}</span></span>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+syntax: glob
+*.pyc
+*.orig
+.sass-cache
+*.css.map
+node_modules
+
+files/
+local_settings.py
+db.sqlite3
+.idea/
+venv/

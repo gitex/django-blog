@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load blog_tags %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <div class="article">
+        <div class="title">
+            <h1 class="text-center">{{ post.title }}</h1>
+        </div>
+
+        {% if user.is_superuser %}
+            <div class="edit">
+                <a href="{% url 'blog:post_update' slug=post.slug %}" class="bnt bnt-primary">Изменить</a>
+                <a href="{% url 'blog:post_delete' slug=post.slug %}" class="bnt bnt-primary">Удалить</a>
+            </div>
+        {% endif %}
+
+        <div class="body">
+            <p>{{ post.body|safe }}</p>
+        </div>
+    </div>
+
+{% endblock %}

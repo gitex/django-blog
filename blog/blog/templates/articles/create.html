@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static  bootstrap4 %}
+
+{% block title %}Создать пост{% endblock %}
+
+{% block extra_css %}
+    {{ form.media }}
+{% endblock %}
+
+{% block content %}
+    <div class="create-post">
+        <div class="title">
+            <h2>Создать пост</h2>
+        </div>
+
+        <div class="fields">
+            <form action="" method="post" class="form">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                {% buttons %}
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                {% endbuttons %}
+            </form>
+        </div>
+    </div>
+{% endblock %}

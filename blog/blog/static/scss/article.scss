@@ -1,0 +1,91 @@
+$gray-light: #ced4da;
+
+.post {
+	background-color: white;
+	padding: 40px;
+	margin-top: 15px;
+	width: 100%;
+	border: 1px #e1e1e1;
+
+	.title a {
+		color: #333 !important;
+		text-decoration: none
+	}
+
+	.description {
+	    background-color: #f7f7f7;
+	    padding: 10px;
+
+	    font-size: 11px;
+        color: gray;
+
+        .tags {
+            margin-left: 20px;
+
+            .tag {
+                color: #707070 !important;
+            }
+        }
+
+	    i.far, i.fas {
+	        margin-right: 7px;
+	        font-size: 15px;
+	        color: black;
+	    }
+	}
+}
+
+.pagination {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.article {
+	.title {
+		margin-top: 10px;
+		background-color: white;
+		padding: 10px;
+	}
+
+	.body {
+	    margin-top: 20px;
+	    padding: 15px;
+	    padding-left: 30px;
+	    background-color: white;
+
+	    blockquote {
+	        color: gray;
+	    }
+	}
+}
+
+.create-post {
+    .title {
+        margin-top: 10px;
+		background-color: white;
+		padding: 10px;
+		text-align: center;
+    }
+
+    .fields {
+        margin-top: 20px;
+    }
+}
+
+.tag-list {
+    .title {
+        background-color: white;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .tags {
+        margin-top: 20px;
+    }
+
+    a {
+		color: #333 !important;
+		text-decoration: none
+	}
+}
