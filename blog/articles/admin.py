@@ -23,6 +23,11 @@ class PostAdmin(admin.ModelAdmin):
     actions = [make_published]
     form = PostForm
 
+    class Media:
+        js = (
+            'js/froala_settings.js',
+        )
+
     def tag_list(self, obj):
         return u", ".join(o.name for o in obj.tags.all())
 

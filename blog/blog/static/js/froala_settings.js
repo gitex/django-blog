@@ -17,14 +17,25 @@ $(function() {
     });
 
     $('#id_body').froalaEditor({
-        heightMin: 350,
+        "inlineMode": true,
+        "imageUploadURL": "/froala_editor/image_upload/",
+        "imageUploadParams": {"csrfmiddlewaretoken": getCookie("csrftoken")},
+        "fileUploadURL": "/froala_editor/file_upload/",
+        "fileUploadParams": {"csrfmiddlewaretoken": getCookie("csrftoken")},
 
+        heightMin: 350,
         toolbarButtons: [
             'fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript',  'code', '|',
             'fontFamily', 'fontSize', 'color', 'inlineClass', 'inlineStyle', 'paragraphStyle', 'lineHeight',
             '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-',
             'insertLink', 'insertImage', 'insertVideo', 'embedly', 'insertFile', 'insertTable', '|',
             'emoticons', 'fontAwesome', 'specialCharacters', 'insertHR', 'selectAll', 'clearFormatting',
-            '|', 'print', 'getPDF', 'spellChecker', 'help', 'html', '|', 'undo', 'redo']
+            '|', 'print', 'getPDF', 'spellChecker', 'help', 'html', '|', 'undo', 'redo'
+        ],
+        codeMirrorOptions: {
+            tabSize: 4
+        },
+
+        
     })
 });
